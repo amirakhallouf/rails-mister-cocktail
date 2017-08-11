@@ -7,7 +7,6 @@ class DosesController < ApplicationController
   end
 
   def create
-
     @dose = Dose.new(dose_params)
     @dose.cocktail = Cocktail.find(params[:cocktail_id])
     if @dose.save
@@ -15,6 +14,20 @@ class DosesController < ApplicationController
         #going to the resaturant page restaurant_patwhere i amde teh review
     else
       render :new   # this is a rails convention <if we save teh review @review.save successfuly redirect me to restaurant_path(@review.restaurant).Otehrwise refersh(render) the new page
+    end
+  end
+  def edit
+    @dose = Dose.find(params[:id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
+  end
+
+  def update
+    @dose = Dose.find(params[:id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    if @dose.update(dose_params)
+      redirect_to cocktail_path(@cocktail)
+    else
+    render :update
     end
   end
   def destroy
