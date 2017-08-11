@@ -1,0 +1,17 @@
+<center>
+
+  <h1><%= @cocktail.name %></h1>   <!-- we put = when we want to return sth . if we do etiration we do not need to show the line with do ||-->
+  <h2>Doses</h2>
+  <% @cocktail.doses.each_with_index do |dose,index|%>
+  <h4>
+    Dose # <%=index + 1 %>  --->   <%= dose.description %> of <%= dose.ingredient.name  %>
+  </h4>
+
+  <% end %>
+
+  <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success"%>
+  <%= link_to "cocktails", cocktails_path, class: "btn btn-success"%>
+  <br><br>
+  <p> <%= link_to "Delete", cocktail_path(@cocktail), data: {:confirm => 'Are you sure?'}, method: :delete, class: "btn btn-success" %></p>
+  <center>
+ <!-- we are using the index in order to print on the page a number befor each ingredient -->

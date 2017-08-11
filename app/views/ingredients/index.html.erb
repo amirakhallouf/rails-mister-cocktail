@@ -1,0 +1,6 @@
+<center >
+  <h1> List of Ingredients</h1>
+  <% @ingredients.each do |ingredient| %>
+    <p><%= ingredient.name%></p><!-- we do not put = inside the ice cream whe n we have end otherwise we get an error -->
+  <% end %>
+<center />
