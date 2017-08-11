@@ -11,6 +11,8 @@
   </head>
 
   <body>
+   <%= render 'shared/navbar' %>    <!-- to generate the same navbar on each page -->
     <%= yield %>
+    <%= render 'shared/footer' %>  <!-- to generate the same footer on each page -->
   </body>
 </html>

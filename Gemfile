@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.5'
 # Use postgresql as the database for Active Record
@@ -37,7 +37,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
-gem 'jquery-rails' # Add this line if you use Rails 5.1
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
